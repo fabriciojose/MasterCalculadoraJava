@@ -18,12 +18,13 @@ import javafx.stage.Stage;
  */
 public class CalculadoraJavaGetHub extends Application {
     
-    @Override
+     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root, 300, 400);
         
+        stage.setTitle("Calculadora");
         stage.setScene(scene);
         stage.show();
     }
