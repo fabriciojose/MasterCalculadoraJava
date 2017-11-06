@@ -20,7 +20,7 @@ import javafx.scene.control.TextField;
  */
 public class FXMLDocumentController implements Initializable {
     
-     int countButtonNumber = 1;
+    int countButtonNumber = 1; // para na primeira vez lançar o número e na segunda lançar o número mais o que estava na saída exit1
     int countButtonOperator = 1;
     float numberOne;
     float numberTwo;
@@ -42,11 +42,10 @@ public class FXMLDocumentController implements Initializable {
     private void btn1(ActionEvent event) {
         if (countButtonNumber == 1) { // contador para adicionar somente o número 1
             exit1.setText("1");
-            exit2.setText("1");
-            System.out.println("Modificando para fazer push");
+            exit2.setText(exit2.getText() + "1");
         }else{ 
             exit1.setText(exit1.getText() + "1"); // para adicionar o 1 mais o que tinha antes
-            exit2.setText(exit1.getText()); 
+            exit2.setText(exit2.getText() + "1"); 
         } 
         countButtonNumber = 2;
     }
@@ -54,50 +53,96 @@ public class FXMLDocumentController implements Initializable {
     private void btn2(ActionEvent event) {
         if (countButtonNumber == 1) { // contador para adicionar somente o número 1
             exit1.setText("2");
-            exit2.setText("2");
+            exit2.setText(exit2.getText() + "2");
         }else{ 
             exit1.setText(exit1.getText() + "2"); // para adicionar o 1 mais o que tinha antes
-            exit2.setText(exit1.getText()); 
+            exit2.setText(exit2.getText() + "2"); 
         } 
         countButtonNumber = 2;
     }
     @FXML
     private void btn3(ActionEvent event) {
-        exit1.setText(exit1.getText() + "3");
+        if (countButtonNumber == 1) { // contador para adicionar somente o número específico
+            exit1.setText("3");
+            exit2.setText(exit2.getText() + "3");
+        }else{ 
+            exit1.setText(exit1.getText() + "3"); // para adicionar o 1 mais o que tinha antes
+            exit2.setText(exit2.getText() + "3"); 
+        } 
+        countButtonNumber = 2;
         
     }
     @FXML
     private void btn4(ActionEvent event) {
-        exit1.setText(exit1.getText() + "4");
-        
+        if (countButtonNumber == 1) { // contador para adicionar somente o número específico
+            exit1.setText("4");
+            exit2.setText(exit2.getText() + "4");
+        }else{ 
+            exit1.setText(exit1.getText() + "4"); // para adicionar o 1 mais o que tinha antes
+            exit2.setText(exit2.getText() + "4"); 
+        } 
+        countButtonNumber = 2;
     }
     @FXML
     private void btn5(ActionEvent event) {
-        exit1.setText(exit1.getText() + "5");
-        
+        if (countButtonNumber == 1) { // contador para adicionar somente o número específico
+            exit1.setText("5");
+            exit2.setText(exit2.getText() + "5");
+        }else{ 
+            exit1.setText(exit1.getText() + "5"); // para adicionar o 1 mais o que tinha antes
+            exit2.setText(exit2.getText() + "5"); 
+        } 
+        countButtonNumber = 2;
     }
     @FXML
     private void btn6(ActionEvent event) {
-        exit1.setText(exit1.getText() + "6");
-        
+        if (countButtonNumber == 1) { // contador para adicionar somente o número específico
+            exit1.setText("6");
+            exit2.setText(exit2.getText() + "6");
+        }else{ 
+            exit1.setText(exit1.getText() + "6"); // para adicionar o 1 mais o que tinha antes
+            exit2.setText(exit2.getText() + "6"); 
+        } 
+        countButtonNumber = 2;
     }
     @FXML
     private void btn7(ActionEvent event) {
-        exit1.setText(exit1.getText() + "7");
-        
+        if (countButtonNumber == 1) { // contador para adicionar somente o número específico
+            exit1.setText("7");
+            exit2.setText(exit2.getText() + "7");
+        }else{ 
+            exit1.setText(exit1.getText() + "7"); // para adicionar o 1 mais o que tinha antes
+            exit2.setText(exit2.getText() + "7"); 
+        } 
+        countButtonNumber = 2;
     }
     @FXML
     private void btn8(ActionEvent event) {
-        exit1.setText(exit1.getText() + "8");    
+       if (countButtonNumber == 1) { // contador para adicionar somente o número específico
+            exit1.setText("8");
+            exit2.setText(exit2.getText() + "8");
+        }else{ 
+            exit1.setText(exit1.getText() + "8"); // para adicionar o 1 mais o que tinha antes
+            exit2.setText(exit2.getText() + "8"); 
+        } 
+        countButtonNumber = 2;    
     }
     @FXML
     private void btn9(ActionEvent event) {
-        exit1.setText(exit1.getText() + "9");
-        
+        if (countButtonNumber == 1) { // contador para adicionar somente o número específico
+            exit1.setText("9");
+            exit2.setText(exit2.getText() + "9");
+        }else{ 
+            exit1.setText(exit1.getText() + "9"); // para adicionar o 1 mais o que tinha antes
+            exit2.setText(exit2.getText() + "9"); 
+        } 
+        countButtonNumber = 2;
     }
     @FXML
     private void btnC(ActionEvent event){
         exit1.setText("");
+        exit2.setText("");
+        countButtonNumber = 1;
     }
     
     @FXML
@@ -107,6 +152,7 @@ public class FXMLDocumentController implements Initializable {
         exit1.setText("+"); // imprimir o +
         
         countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
+        
     }
     
     @Override
