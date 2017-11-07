@@ -43,7 +43,6 @@ public class FXMLDocumentController implements Initializable {
         if (countButtonNumber == 1) { // contador para adicionar somente o número 1
             exit1.setText("1");
             exit2.setText("1");
-            System.out.println("Modificando para fazer push");
         }else{ 
             exit1.setText(exit1.getText() + "1"); // para adicionar o 1 mais o que tinha antes
             exit2.setText(exit1.getText()); 
