@@ -44,6 +44,7 @@
 <Button text=" % " GridPane.columnIndex="2" GridPane.rowIndex="3"   prefHeight="45" prefWidth="45"/>
 <Button text="DEL" GridPane.columnIndex="3" GridPane.rowIndex="3"   prefHeight="45" prefWidth="45"/>
 
+<!-- Mais uma atualização -->
 <gridLinesVisible>false</gridLinesVisible>
 
 </GridPane>
