@@ -154,6 +154,35 @@ public class FXMLDocumentController implements Initializable {
         countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
         
     }
+    @FXML
+    private void btnSub (ActionEvent event){
+        numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação
+        exit2.setText(exit1.getText() + " - ");
+        exit1.setText("-"); // imprimir o -
+        
+        countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
+        
+    }
+    
+    @FXML
+    private void btnDiv (ActionEvent event){
+        numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação
+        exit2.setText(exit1.getText() + " ÷ ");
+        exit1.setText("÷"); // imprimir o -
+        
+        countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
+        
+    }
+    
+    @FXML
+    private void btnMult (ActionEvent event){
+        numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação
+        exit2.setText(exit1.getText() + " x ");
+        exit1.setText("x"); // imprimir 
+        
+        countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
+        
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

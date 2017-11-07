@@ -8,19 +8,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<!--
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculadorajavagethub.FXMLDocumentController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
-</AnchorPane>
-
-
--->
-
-
-
 <GridPane fx:controller="calculadorajavagethub.FXMLDocumentController" 
           xmlns:fx="http://javafx.com/fxml" 
           alignment="CENTER" hgap="10" vgap="10">
@@ -39,18 +26,18 @@
 <Button text=" 1 " GridPane.columnIndex="0" GridPane.rowIndex="6" prefHeight="45" prefWidth="45" onAction="#btn1"/>
 <Button text=" 2 " GridPane.columnIndex="1" GridPane.rowIndex="6" prefHeight="45" prefWidth="45" onAction="#btn2"/>
 <Button text=" 3 " GridPane.columnIndex="2" GridPane.rowIndex="6" prefHeight="45" prefWidth="45" onAction="#btn3"/>
-<Button text=" - " GridPane.columnIndex="3" GridPane.rowIndex="6" prefHeight="45" prefWidth="45" />
+<Button text=" - " GridPane.columnIndex="3" GridPane.rowIndex="6" prefHeight="45" prefWidth="45" onAction="#btnSub"/>
 
 
 <Button text=" 4 " GridPane.columnIndex="0" GridPane.rowIndex="5" prefHeight="45" prefWidth="45" onAction="#btn4"/>
 <Button text=" 5 " GridPane.columnIndex="1" GridPane.rowIndex="5" prefHeight="45" prefWidth="45" onAction="#btn5"/>
 <Button text=" 6 " GridPane.columnIndex="2" GridPane.rowIndex="5" prefHeight="45" prefWidth="45" onAction="#btn6"/>
-<Button text=" x " GridPane.columnIndex="3" GridPane.rowIndex="5" prefHeight="45" prefWidth="45" onAction="#btn0"/>
+<Button text=" x " GridPane.columnIndex="3" GridPane.rowIndex="5" prefHeight="45" prefWidth="45" onAction="#btnMult"/>
 
 <Button text=" 7 " GridPane.columnIndex="0" GridPane.rowIndex="4" prefHeight="45" prefWidth="45" onAction="#btn7"/>
 <Button text=" 8 " GridPane.columnIndex="1" GridPane.rowIndex="4" prefHeight="45" prefWidth="45" onAction="#btn8"/>
 <Button text=" 9 " GridPane.columnIndex="2" GridPane.rowIndex="4" prefHeight="45" prefWidth="45" onAction="#btn9"/>
-<Button text=" ÷ " GridPane.columnIndex="3" GridPane.rowIndex="4" prefHeight="45" prefWidth="45" />
+<Button text=" ÷ " GridPane.columnIndex="3" GridPane.rowIndex="4" prefHeight="45" prefWidth="45" onAction="#btnDiv"/>
 
 <Button text=" C " GridPane.columnIndex="0" GridPane.rowIndex="3"   prefHeight="45" prefWidth="45" onAction="#btnC"/>
 <Button text=" +/- " GridPane.columnIndex="1" GridPane.rowIndex="3" prefHeight="45" prefWidth="45"/>
