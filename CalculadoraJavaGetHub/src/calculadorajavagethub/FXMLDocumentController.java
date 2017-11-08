@@ -21,7 +21,7 @@ import javafx.scene.control.TextField;
 public class FXMLDocumentController implements Initializable {
     
     int countButtonNumber = 1; // para na primeira vez lançar o número e na segunda lançar o número mais o que estava na saída exit1
-    int countButtonOperator = 1;
+    int countButtonOperator; // para descobrir qual operador foi  solicitato + - x dividido...
     float numberOne;
     float numberTwo;
     
@@ -152,7 +152,7 @@ public class FXMLDocumentController implements Initializable {
         exit1.setText("+"); // imprimir o +
         
         countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
-        
+        countButtonOperator = 1;
     }
     @FXML
     private void btnSub (ActionEvent event){
@@ -161,7 +161,7 @@ public class FXMLDocumentController implements Initializable {
         exit1.setText("-"); // imprimir o -
         
         countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
-        
+        countButtonOperator = 2;
     }
     
     @FXML
@@ -171,7 +171,7 @@ public class FXMLDocumentController implements Initializable {
         exit1.setText("÷"); // imprimir o -
         
         countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
-        
+        countButtonOperator= 3;
     }
     
     @FXML
@@ -181,7 +181,26 @@ public class FXMLDocumentController implements Initializable {
         exit1.setText("x"); // imprimir 
         
         countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
+        countButtonOperator = 4;
+    }
+    
+     @FXML
+    private void btnEqual (ActionEvent event){
+        numberTwo = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação
+        exit2.setText(exit2.getText() + " = ");
+        if (countButtonOperator == 1){
+            exit1.setText(String.valueOf(numberOne + numberTwo)); // imprimir 
+        }
+        if (countButtonOperator == 2){
+            exit1.setText(String.valueOf(numberOne - numberTwo)); // imprimir 
+        }
+        if (countButtonOperator == 3){
+            exit1.setText(String.valueOf(numberOne / numberTwo)); // imprimir 
+        }if (countButtonOperator == 4){
+            exit1.setText(String.valueOf(numberOne * numberTwo)); // imprimir 
+        }
         
+        countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
     }
     
     @Override
