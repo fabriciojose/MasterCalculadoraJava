@@ -6,6 +6,7 @@
 
 package calculadorajavagethub;
 
+
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -146,54 +147,80 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
-    private void btnSum (ActionEvent event){
-        String strGetNumberOne = exit1.getText();
-        if (strGetNumberOne.isEmpty() ) { // 
-            exit1.setText("+"); // imprimir o +
-        }
+    private void btnSum (ActionEvent event){ 
+        String strGetNumberSum = exit1.getText();
+        //System.out.println(Character.isDigit(strGetNumbeSum));
         /*
-        else if (strGetNumberOne == "+"){
-            System.out.println (strGetNumberOne);
-            exit1.setText("+"); // imprimir o +
-        } */
-        else {
-            numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação
-            exit2.setText(exit1.getText() + " + ");
-            exit1.setText("+"); // imprimir o +
+        if (strGetNumberSum.isEmpty() ) { // caso esteja vazio o exti1, imprima o "+"
+            exit1.setText("+");
         }
-            
+        else if (strGetNumberSum.equals ("+")){ // caso já haja no  exit1 o sinal "+", reescreva o sinal "+"
+            exit1.setText("+"); 
+        } 
+        else {
+            numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação e imprimir "+"
+            exit2.setText(exit1.getText() + " + ");
+            exit1.setText("+"); 
+        }
+                
+                */
+        
         countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
         countButtonOperator = 1;        
         
     }
     @FXML
     private void btnSub (ActionEvent event){
-        numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação
-        exit2.setText(exit1.getText() + " - ");
-        exit1.setText("-"); // imprimir o -
-        
+        String strGetNumberSub = exit1.getText();
+        if (strGetNumberSub.isEmpty() ) { // caso esteja vazio o exti1, imprima o "-"
+            exit1.setText("-");
+        }
+        else if (strGetNumberSub.equals("-")){ // caso já haja no  exit1 o sinal "-", reescreva o sinal "-"
+            exit1.setText("-"); 
+        } 
+        else {
+            numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação e imprimir "-"
+            exit2.setText(exit1.getText() + " - ");
+            exit1.setText("-"); 
+        }   
         countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
-        countButtonOperator = 2;
+        countButtonOperator = 2; 
     }
     
     @FXML
     private void btnDiv (ActionEvent event){
-        numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação
-        exit2.setText(exit1.getText() + " ÷ ");
-        exit1.setText("÷"); // imprimir o -
-        
+        String strGetNumberDiv = exit1.getText();
+        if (strGetNumberDiv.isEmpty() ) { // caso esteja vazio o exti1, imprima o "÷"
+            exit1.setText("÷");
+        }
+        else if (strGetNumberDiv.equals("÷")){ // caso já haja no  exit1 o sinal "÷", reescreva o sinal "÷"
+            exit1.setText("÷"); 
+        } 
+        else {
+            numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação e imprimir "÷"
+            exit2.setText(exit1.getText() + " ÷ ");
+            exit1.setText("÷"); 
+        }   
         countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
-        countButtonOperator= 3;
+        countButtonOperator = 3; 
     }
     
     @FXML
     private void btnMult (ActionEvent event){
-        numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação
-        exit2.setText(exit1.getText() + " x ");
-        exit1.setText("x"); // imprimir 
-        
+        String strGetNumberMult = exit1.getText();
+        if (strGetNumberMult.isEmpty() ) { // caso esteja vazio o exti1, imprima o "x"
+            exit1.setText("x");
+        }
+        else if (strGetNumberMult.equals("x")){ // caso já haja no  exit1 o sinal "x", reescreva o sinal "x"
+            exit1.setText("x"); 
+        } 
+        else {
+            numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação e imprimir "x"
+            exit2.setText(exit1.getText() + " x ");
+            exit1.setText("x"); 
+        }   
         countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
-        countButtonOperator = 4;
+        countButtonOperator = 4; 
     }
     
      @FXML
@@ -208,7 +235,8 @@ public class FXMLDocumentController implements Initializable {
         }
         if (countButtonOperator == 3){
             exit1.setText(String.valueOf(numberOne / numberTwo)); // imprimir 
-        }if (countButtonOperator == 4){
+        }
+        if (countButtonOperator == 4){
             exit1.setText(String.valueOf(numberOne * numberTwo)); // imprimir 
         }
         
