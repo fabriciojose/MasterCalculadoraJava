@@ -147,12 +147,24 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void btnSum (ActionEvent event){
-        numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação
-        exit2.setText(exit1.getText() + " + ");
-        exit1.setText("+"); // imprimir o +
-        
+        String strGetNumberOne = exit1.getText();
+        if (strGetNumberOne.isEmpty() ) { // 
+            exit1.setText("+"); // imprimir o +
+        }
+        /*
+        else if (strGetNumberOne == "+"){
+            System.out.println (strGetNumberOne);
+            exit1.setText("+"); // imprimir o +
+        } */
+        else {
+            numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação
+            exit2.setText(exit1.getText() + " + ");
+            exit1.setText("+"); // imprimir o +
+        }
+            
         countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
-        countButtonOperator = 1;
+        countButtonOperator = 1;        
+        
     }
     @FXML
     private void btnSub (ActionEvent event){
