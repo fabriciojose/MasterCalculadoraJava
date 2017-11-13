@@ -149,22 +149,21 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void btnSum (ActionEvent event){ 
         String strGetNumberSum = exit1.getText();
-        //System.out.println(Character.isDigit(strGetNumbeSum));
-        /*
-        if (strGetNumberSum.isEmpty() ) { // caso esteja vazio o exti1, imprima o "+"
+        char cNumberSum [] = strGetNumberSum.toCharArray(); // porém quando o resultado dá empty, dá erro no programa.
+        
+        if (strGetNumberSum.isEmpty()) { // caso esteja vazio o exti1, imprima o "+"
             exit1.setText("+");
+           
         }
-        else if (strGetNumberSum.equals ("+")){ // caso já haja no  exit1 o sinal "+", reescreva o sinal "+"
-            exit1.setText("+"); 
-        } 
-        else {
+        if (Character.isDigit(cNumberSum[0])){
             numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação e imprimir "+"
             exit2.setText(exit1.getText() + " + ");
-            exit1.setText("+"); 
+            exit1.setText("+");
         }
-                
-                */
-        
+        else {
+            exit1.setText("+");
+        }
+           
         countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
         countButtonOperator = 1;        
         
