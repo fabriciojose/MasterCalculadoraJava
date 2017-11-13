@@ -7,6 +7,7 @@
 package calculadorajavagethub;
 
 
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -149,21 +150,16 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void btnSum (ActionEvent event){ 
         String strGetNumberSum = exit1.getText();
-        char cNumberSum [] = strGetNumberSum.toCharArray(); // porém quando o resultado dá empty, dá erro no programa.
-        
-        if (strGetNumberSum.isEmpty()) { // caso esteja vazio o exti1, imprima o "+"
-            exit1.setText("+");
-           
+        try { // para verificar a excessão do exit1 vazio, que não deixa fazer a conversão toCharArray
+           char cNumberSum [] = strGetNumberSum.toCharArray(); // transformar uma array de char e verificar se é digito
+           if (Character.isDigit(cNumberSum[0])){
+                numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação e imprimir "+"
+                exit2.setText(exit1.getText() + " + "); // adionar na saída exit2 o "+"
+                exit1.setText("+"); // adicionar o sinal mais na saida exit1
+           }
+        } catch (Exception e){ // caso haja exceção, como "empty", imprimir na saída exit1 e exit2 "+"
+                exit1.setText("+"); 
         }
-        if (Character.isDigit(cNumberSum[0])){
-            numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação e imprimir "+"
-            exit2.setText(exit1.getText() + " + ");
-            exit1.setText("+");
-        }
-        else {
-            exit1.setText("+");
-        }
-           
         countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
         countButtonOperator = 1;        
         
