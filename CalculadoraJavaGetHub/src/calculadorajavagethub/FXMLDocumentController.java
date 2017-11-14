@@ -148,74 +148,83 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
-    private void btnSum (ActionEvent event){ 
+    private void btnSum (ActionEvent event){ // sinal específico "+"
         String strGetNumberSum = exit1.getText();
         try { // para verificar a excessão do exit1 vazio, que não deixa fazer a conversão toCharArray
-           char cNumberSum [] = strGetNumberSum.toCharArray(); // transformar uma array de char e verificar se é digito
-           if (Character.isDigit(cNumberSum[0])){
-                numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação e imprimir "+"
-                exit2.setText(exit1.getText() + " + "); // adionar na saída exit2 o "+"
-                exit1.setText("+"); // adicionar o sinal mais na saida exit1
-           }
-        } catch (Exception e){ // caso haja exceção, como "empty", imprimir na saída exit1 e exit2 "+"
+            char cNumberSum [] = strGetNumberSum.toCharArray(); // transformar uma array de char e verificar se é digito
+            if (Character.isDigit(cNumberSum[0])){
+                numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação e imprimir o sinal epecífico
+                exit2.setText(exit1.getText() + " + "); // adionar na saída exit2 o sinal específico
+                exit1.setText("+"); // imprimir o sinal específico na saida exit1
+            } else {
                 exit1.setText("+"); 
-        }
+                }
+            } 
+            catch (ArrayIndexOutOfBoundsException e){ // caso haja exceção, como "empty", imprimir na saída exit1 e exit2 o sinal específico
+                exit1.setText("+"); 
+                }
         countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
         countButtonOperator = 1;        
-        
+        // estudar https://www.devmedia.com.br/blocos-try-catch/7339
     }
     @FXML
     private void btnSub (ActionEvent event){
-        String strGetNumberSub = exit1.getText();
-        if (strGetNumberSub.isEmpty() ) { // caso esteja vazio o exti1, imprima o "-"
-            exit1.setText("-");
-        }
-        else if (strGetNumberSub.equals("-")){ // caso já haja no  exit1 o sinal "-", reescreva o sinal "-"
-            exit1.setText("-"); 
-        } 
-        else {
-            numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação e imprimir "-"
-            exit2.setText(exit1.getText() + " - ");
-            exit1.setText("-"); 
-        }   
+        String strGetNumberSum = exit1.getText();
+        try { // para verificar a excessão do exit1 vazio, que não deixa fazer a conversão toCharArray
+            char cNumberSum [] = strGetNumberSum.toCharArray(); // transformar uma array de char e verificar se é digito
+            if (Character.isDigit(cNumberSum[0])){
+                numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação e imprimir o sinal epecífico
+                exit2.setText(exit1.getText() + " - "); // adionar na saída exit2 o sinal específico
+                exit1.setText("-"); // imprimir o sinal específico na saida exit1 
+            } else {
+                exit1.setText("-"); 
+                }
+            } 
+            catch (ArrayIndexOutOfBoundsException e){ // caso haja exceção, como "empty", imprimir na saída exit1 e exit2 o sinal específico
+                exit1.setText("-"); 
+                }
         countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
-        countButtonOperator = 2; 
+        countButtonOperator = 2;   
     }
     
     @FXML
     private void btnDiv (ActionEvent event){
-        String strGetNumberDiv = exit1.getText();
-        if (strGetNumberDiv.isEmpty() ) { // caso esteja vazio o exti1, imprima o "÷"
-            exit1.setText("÷");
-        }
-        else if (strGetNumberDiv.equals("÷")){ // caso já haja no  exit1 o sinal "÷", reescreva o sinal "÷"
-            exit1.setText("÷"); 
-        } 
-        else {
-            numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação e imprimir "÷"
-            exit2.setText(exit1.getText() + " ÷ ");
-            exit1.setText("÷"); 
-        }   
+        String strGetNumberSum = exit1.getText();
+        try { // para verificar a excessão do exit1 vazio, que não deixa fazer a conversão toCharArray
+            char cNumberSum [] = strGetNumberSum.toCharArray(); // transformar uma array de char e verificar se é digito
+            if (Character.isDigit(cNumberSum[0])){
+                numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação e imprimir o sinal epecífico
+                exit2.setText(exit1.getText() + " ÷ "); // adionar na saída exit2 o sinal específico
+                exit1.setText("÷"); // imprimir o sinal específico na saida exit1
+            } else {
+                exit1.setText("÷"); 
+                }
+            } 
+            catch (ArrayIndexOutOfBoundsException e){ // caso haja exceção, como "empty", imprimir na saída exit1 e exit2 o sinal específico
+                exit1.setText("÷"); 
+                }
         countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
-        countButtonOperator = 3; 
+        countButtonOperator = 3;   
     }
     
     @FXML
     private void btnMult (ActionEvent event){
-        String strGetNumberMult = exit1.getText();
-        if (strGetNumberMult.isEmpty() ) { // caso esteja vazio o exti1, imprima o "x"
-            exit1.setText("x");
-        }
-        else if (strGetNumberMult.equals("x")){ // caso já haja no  exit1 o sinal "x", reescreva o sinal "x"
-            exit1.setText("x"); 
-        } 
-        else {
-            numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação e imprimir "x"
-            exit2.setText(exit1.getText() + " x ");
-            exit1.setText("x"); 
-        }   
+        String strGetNumberSum = exit1.getText();
+        try { // para verificar a excessão do exit1 vazio, que não deixa fazer a conversão toCharArray
+            char cNumberSum [] = strGetNumberSum.toCharArray(); // transformar uma array de char e verificar se é digito
+            if (Character.isDigit(cNumberSum[0])){
+                numberOne = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação e imprimir o sinal epecífico
+                exit2.setText(exit1.getText() + " x "); // adionar na saída exit2 o sinal específico
+                exit1.setText("x"); // imprimir o sinal específico na saida exit1  
+            } else {
+                exit1.setText("x"); 
+                }
+            } 
+            catch (ArrayIndexOutOfBoundsException e){ // caso haja exceção, como "empty", imprimir na saída exit1 e exit2 o sinal específico
+                exit1.setText("x"); 
+                }
         countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
-        countButtonOperator = 4; 
+        countButtonOperator = 4;   
     }
     
      @FXML
