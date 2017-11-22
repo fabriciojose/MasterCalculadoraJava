@@ -146,7 +146,19 @@ public class FXMLDocumentController implements Initializable {
         exit2.setText("");
         countButtonNumber = 1;
     }
-    
+    @FXML
+    private void bntDot (ActionEvent event){
+        String strGetText = exit1.getText();
+        if (countButtonNumber == 1){
+            exit1.setText(".");
+            
+        }else{
+            exit1.setText(strGetText + ".");
+            
+        }
+        countButtonNumber = 2;
+        // o número com ponto não está indo para o exit2 direito. Ele é digitado .23, por exemplo, e deve subir 0.23
+    }
     @FXML
     private void btnSum (ActionEvent event){ // sinal específico "+"
         String strGetNumberSum = exit1.getText();

@@ -19,7 +19,7 @@
     GridPane.columnSpan="4"/>
 
 <Button text=" 0 " GridPane.columnIndex="0" GridPane.rowIndex="7" prefHeight="45" prefWidth="45" onAction="#btn0" />
-<Button text=" . " GridPane.columnIndex="1" GridPane.rowIndex="7" prefHeight="45" prefWidth="45"/>
+<Button text=" . " GridPane.columnIndex="1" GridPane.rowIndex="7" prefHeight="45" prefWidth="45" onAction="#bntDot"/>
 <Button text=" = " GridPane.columnIndex="2" GridPane.rowIndex="7" prefHeight="45" prefWidth="45" onAction="#btnEqual"/>
 <Button text=" + " GridPane.columnIndex="3" GridPane.rowIndex="7" prefHeight="45" prefWidth="45" onAction="#btnSum"/>
 
