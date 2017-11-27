@@ -38,7 +38,14 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void btn0(ActionEvent event) {
-        exit1.setText(exit1.getText() + "0");
+        if (countButtonNumber == 1) { // contador para adicionar somente o número 1
+            exit1.setText("0");
+            exit2.setText(exit2.getText() + "0");
+        }else{ 
+            exit1.setText(exit1.getText() + "0"); // para adicionar o 1 mais o que tinha antes
+            exit2.setText(exit2.getText() + "0"); 
+        } 
+        countButtonNumber = 2;
     }
     @FXML
     private void btn1(ActionEvent event) {
@@ -150,10 +157,12 @@ public class FXMLDocumentController implements Initializable {
     private void bntDot (ActionEvent event){
         String strGetText = exit1.getText();
         if (countButtonNumber == 1){
-            exit1.setText(".");
+            exit1.setText("0.");
+            exit2.setText(exit2.getText() + "0.");
             
         }else{
             exit1.setText(strGetText + ".");
+            exit2.setText(exit2.getText() + ".");
             
         }
         countButtonNumber = 2;
