@@ -42,7 +42,7 @@
 <Button text=" C " GridPane.columnIndex="0" GridPane.rowIndex="3"   prefHeight="45" prefWidth="45" onAction="#btnC"/>
 <Button text=" +/- " GridPane.columnIndex="1" GridPane.rowIndex="3" prefHeight="45" prefWidth="45"/>
 <Button text=" % " GridPane.columnIndex="2" GridPane.rowIndex="3"   prefHeight="45" prefWidth="45"/>
-<Button text="DEL" GridPane.columnIndex="3" GridPane.rowIndex="3"   prefHeight="45" prefWidth="45"/>
+<Button text="DEL" GridPane.columnIndex="3" GridPane.rowIndex="3"   prefHeight="45" prefWidth="45" onAction="#btnDEL"/>
 
 <!-- Mais uma atualização -->
 <gridLinesVisible>false</gridLinesVisible>

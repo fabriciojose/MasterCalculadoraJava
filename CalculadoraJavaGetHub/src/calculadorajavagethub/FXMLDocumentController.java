@@ -248,7 +248,7 @@ public class FXMLDocumentController implements Initializable {
         countButtonOperator = 4;   
     }
     
-     @FXML
+    @FXML
     private void btnEqual (ActionEvent event){
         numberTwo = Float.parseFloat(exit1.getText()); // obter o primeiro número da equação
         exit2.setText(exit2.getText() + " = ");
@@ -268,9 +268,16 @@ public class FXMLDocumentController implements Initializable {
         countButtonNumber = 1; // contador para o próximo número não vir com o sinal da soma ou outro
     }
     
+    @FXML 
+    private void btnDEL (ActionEvent event){
+        String numberDEL = exit1.getText();
+        int lengthNumberDEL = numberDEL.length() - 1;
+        exit1.setText(numberDEL.substring(0, lengthNumberDEL));
+        //System.out.println(); 
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }      
 }
