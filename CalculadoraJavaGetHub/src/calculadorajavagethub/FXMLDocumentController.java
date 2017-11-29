@@ -270,10 +270,30 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML 
     private void btnDEL (ActionEvent event){
-        String numberDEL = exit1.getText();
-        int lengthNumberDEL = numberDEL.length() - 1;
-        exit1.setText(numberDEL.substring(0, lengthNumberDEL));
-        //System.out.println(); 
+        String numberExit1DEL = exit1.getText();
+        String numberExit2DEL = exit2.getText();
+        
+        if (numberExit1DEL.trim().equals("")) {
+        exit1.setText("");
+        exit2.setText("");
+        } else {
+           int lengthNumberExit1DEL = numberExit1DEL.length() - 1;
+           int lengthNumberExit2DEL = numberExit2DEL.length() - 1;
+           exit1.setText(numberExit1DEL.substring(0, lengthNumberExit1DEL)); 
+           exit2.setText(numberExit2DEL.substring(0, lengthNumberExit2DEL));
+        }
+    }
+    @FXML
+    private void btnPlusSub (ActionEvent event){
+        //    PRECISA ESTUDAR SUBSTRING  PARA CRIAR 50 + (-90) = 
+        String plusSub = exit1.getText();
+        if (Float.parseFloat(plusSub) > 0){
+            exit1.setText("-" + plusSub);
+            //exit2.setText(exit2.getText() + "7"); 
+        }else {
+            exit1.setText("+" + plusSub);
+        }
+        
     }
     
     @Override
