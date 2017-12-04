@@ -286,8 +286,16 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void btnPlusSub (ActionEvent event){
         //    PRECISA ESTUDAR SUBSTRING  PARA CRIAR 50 + (-90) = 
+        
+        //se clicar com os textos vazios?
+        
         String plusSub = exit1.getText();
-        if (Float.parseFloat(plusSub) > 0){
+        if (plusSub.isEmpty()) {
+            exit1.setText("-");
+            exit2.setText(exit1.getText());
+            countButtonNumber = 2;
+        }
+        else if (Float.parseFloat(plusSub) > 0){
             exit1.setText("-" + plusSub);
             //exit2.setText(exit2.getText() + "7"); 
         }else {
