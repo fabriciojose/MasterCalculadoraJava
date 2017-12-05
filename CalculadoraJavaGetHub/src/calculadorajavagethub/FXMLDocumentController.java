@@ -7,7 +7,6 @@
 package calculadorajavagethub;
 
 
-import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -290,18 +289,24 @@ public class FXMLDocumentController implements Initializable {
         //se clicar com os textos vazios?
         
         String plusSub = exit1.getText();
-        if (plusSub.isEmpty()) {
+        if (plusSub.equals("")) { // comparação de strings sempre com equals...
             exit1.setText("-");
             exit2.setText(exit1.getText());
-            countButtonNumber = 2;
+            
         }
-        else if (Float.parseFloat(plusSub) > 0){
+        else {
+            exit1.setText("-" + plusSub);
+            exit2.setText(exit1.getText());
+        }
+        //countButtonNumber = 2;  
+         
+            /*if (Float.parseFloat(plusSub) > 0){
             exit1.setText("-" + plusSub);
             //exit2.setText(exit2.getText() + "7"); 
         }else {
             exit1.setText("+" + plusSub);
-        }
-        
+        }*/
+      // CONTINUAR ASSITINDO SQL + JAVA https://www.youtube.com/watch?v=IyZnHwmHweQ  
     }
     
     @Override
